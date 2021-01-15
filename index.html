@@ -5,6 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Camilo Cuestas Moncada</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" type="image/png"  href="./img/fav-icon.png">
     <link rel='stylesheet' type='text/css'  href='./css/styles.css'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
@@ -215,32 +216,44 @@
 
     <section class="contacto">
         <div class="form__container">
-            <div class="form__content">
-                <div class="form__title">
-                    <h3>Contactame</h3>
+            <form action="" class="form">
+                <div class="form__content">
+                        <div class="form__title">
+                            <h3>Contáctame</h3>
+                        </div>
+                    
+                        <div class="grupo">
+                            <input type="text" class="nombre" required>
+                            <label for="" class="nombre">Nombre:</label>
+                            <span class="barra"></span>
+                        </div>
+                        <div class="grupo">
+                            <input type="email" class="mail" required>
+                            <label for="" class="mail">E-mail:</label>
+                            <span class="barra"></span>
+                        </div>
+                        <div class="grupo">
+                            <textarea rows="5" class="mensaje" required></textarea>
+                            <label for="" class="mensaje">Mensaje:</label>
+                            <span class="barra"></span>
+                        </div>
+                        <button type="submit" class="boton">Enviar</button>
+
                 </div>
-                <form action="" class="form">
-                    <label for="" class="nombre">Nombre:</label>
-                    <input type="text" class="nombre">
-                    <label for="" class="nombre">E-mail:</label>
-                    <input type="text" class="mail">
-                    <label for="" class="nombre">Telefono:</label>
-                    <input type="number" class="tel">
-                    <label for="" class="nombre">Mensaje:</label>
-                    <input type="text" class="mensaje">
-                </form>
-            </div>
+                    
+            </form>
+            
             
         </div>
     </section>
 
       <footer class="footer">
-        <div class="conatiner footer__grid">
-            <section class="footer__contact">
-                <div class="footer__icons">
+        <div class="footer__container">
+            <div class="footer__contact">
+               
 
-                    <span class="footer__container-icons">
-                        <a class="nav__items nav__items--footer" href="https://github.com/CamiloCuestasMoncada" target="_blank"></a>        
+                    <span class="footer__container-icons"></span>
+                        <a class="nav__items nav__items--footer" href="https://github.com/CamiloCuestasMoncada" target="_blank">        
                             <img
                             
                                 id="inicio"
@@ -253,19 +266,6 @@
                     </span>    
                 
                     <span class="footer__container-icons">
-                        <a class="nav__items nav__items--footer" href="#">
-                        
-                            <img
-                            
-                                id="inicio"
-                                src="./img/myWebSite.svg"
-                                alt="icono de sitio web"
-                                height="90"
-                                width="100" />
-                        </a>
-            
-                    </span>
-                    <span class="footer__container-icons">
                         <a class="nav__items nav__items--footer" href="https://www.linkedin.com/in/jos%C3%A9-camilo-cuestas-moncada-06705a1b6/" target="_blank">
                             <img
                             
@@ -277,15 +277,17 @@
                         </a> 
                         
                     </span>
-                </div>
+                
           
-            </section>
+            </div>
             
       
         
 
-            
+            <div class="footer__autor">
                 <span>Developed and designed by Camilo Cuestas Moncada. ©2021. All rights reserved.</span>
+            </div>
+                
                 
     </div>  
             </footer>
