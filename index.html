@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     
 </head>
 <body>
@@ -21,23 +22,32 @@
                 <li><a href="#" class="nav__items">Contacto</a></li>
             </ul>
         </nav>
-        <div class="container">
-            
-            <section class="hero__container">
-          
-              <div class="hero__partes"> 
+
+        <div class="hero__partes"> 
                   <img src="./img/Me.png" alt="foto de perfil de camilo cuestas moncada" class="hero__foto__img-perfil">
                   <div class="hero__textos">
-                    <h1>Camilo Cuestas Moncada</h1>
+                    <h1 class="hero__titulo">Camilo Cuestas Moncada</h1>
                     <h2 class="hero__subtitulo">Front-end Developer Jr</h2>
                   </div>
                   
               </div>
             
-            </section>
+         <div class="hero__animaciones">
+             <div class="hero__animaciones-container">
+               
+                <img src="./img/codeVector.svg" alt="dibujo de lineas de codigo" class="hero__animaciones-code-vector">
+                <img src="./img/llaveCierra.svg" alt="dibujo llave texto" class="hero__animaciones-llave">
+                <img src="./img/bug.svg" alt="dibujo de un insecto" class="hero__animaciones-bug">
+                <div class="contenedor__hand">
+                    <img src="./img/hand.png" alt="foto de un brazo" class="hero__animaciones-hand">
+                </div>
+                
+             </div>
+            
+         </div>   
        
 
-        </div>  
+         
       
     </header>
    
@@ -319,5 +329,6 @@
       
       
 </body>
+<script src="./js/index.js"></script>
 </html>
 
