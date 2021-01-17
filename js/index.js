@@ -91,6 +91,16 @@ gsap.to('.hero__animaciones-code-vector',{
         
         
     });
+let cambiaFotoHero=()=>{
+    document.querySelector('.hero__foto__img-perfil').src='img/perfil.jpg';
+}
 
+let cambiaFotoHero2=()=>{
+    document.querySelector('.hero__foto__img-perfil').src='img/Me.jpg';
+}
+
+
+setTimeout('cambiaFotoHero()',3500);
+setTimeout('cambiaFotoHero2()',7000);
 
 
