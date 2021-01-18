@@ -16,12 +16,19 @@
 </head>
 
 <body>
-    <header class="hero">
+    <header class="hero" id="inicio">
         <nav class="nav">
+            <div class="home__contenedor">
+                <a href="#inicio" class="nav__items2">
+                    <img id="inicio" src="./img/inicio.png" alt="icono Inicio" height="30" width="30" />
+                </a>
+            </div>
+            
+
             <ul>
-                <li><a href="#" class="nav__items">Portafolio</a></li>
-                <li><a href="#" class="nav__items">Skill Set</a></li>
-                <li><a href="#" class="nav__items">Contacto</a></li>
+                <li><a href="#portafolio" class="nav__items">Portafolio</a></li>
+                <li><a href="#skill-set" class="nav__items">Skill Set</a></li>
+                <li><a href="#contacto" class="nav__items">Contacto</a></li>
             </ul>
         </nav>
 
@@ -57,7 +64,7 @@
     </header>
 
     <main class="proyectos">
-        <div class="container-g">
+        <div class="container-g" id="portafolio">
             <h2 class="section__title">Portafolio</h2>
             <div class="proyectos__content">
 
@@ -104,7 +111,7 @@
     </main>
 
     <section class="skill">
-        <div class="skill__container">
+        <div class="skill__container" id="skill-set">
             <h2 class="skill__title">Skill-Set</h2>
             <div class="skill__content">
                 <div class="skill__item">
@@ -182,7 +189,7 @@
     </section>
 
     <section class="contacto">
-        <div class="form__container">
+        <div class="form__container" id="contacto">
             <form action="" class="form">
                 <div class="form__content">
                     <div class="form__title">
