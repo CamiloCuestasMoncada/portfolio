@@ -6,7 +6,6 @@
 
 html {
     font-size: 16px;
-    scroll-behavior: smooth;
 
 
 }
@@ -39,6 +38,11 @@ html {
 }
 
 
+.nav {
+    background-color: rgb(0 123 61 / 49%);
+    box-shadow      : 0px 4px 4px #0000008c;
+}
+
 .hero__foto__img-perfil {
     width        : 250px;
     height       : 250px;
@@ -66,16 +70,13 @@ html {
 }
 
 .nav {
-    background-color: rgb(0 123 61 / 49%);
-    box-shadow      : 0px 4px 4px #0000008c;
     display        : flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     height         : 70px;
     align-items    : center;
     font-family    : 'Open Sans', sans-serif;
     position       : fixed;
     width          : 100vw;
-    z-index: 1;
 
 }
 
@@ -101,13 +102,6 @@ html {
     text-decoration: none;
     margin-right   : 20px;
     padding        : 10px 15px;
-}
-
-
-
-.home__contenedor{
-    
-    padding-left: 20px;
 }
 
 .hero__container {
@@ -712,10 +706,6 @@ textarea:focus~.barra::before {
         width: 77%;;
     }
 
-    .nav ul li a{
-        font-size: 14px;
-    }
-
 }
 
 
@@ -731,7 +721,7 @@ textarea:focus~.barra::before {
 
     .nav ul li a {
         text-decoration: none;
-        font-size      : 12px;
+        font-size      : 16px;
     }
 }
 
