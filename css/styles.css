@@ -201,7 +201,31 @@ html {
 }
 
 
+.hand{
+    width: 30px;
+    height: 30px;
+}
 
+.mensajeEnvioFormulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    height: 300px;
+    width: 100%;
+    background-color: rgba(35, 195, 243, 0.904);
+    font-family: 'Open Sans';
+    display: none;
+}
+
+
+
+.cerrarAviso{
+    margin-left: 40px;
+    padding: 10px;
+    cursor: pointer;
+}
 
 
 /*proyectos*/
@@ -519,7 +543,13 @@ textarea:focus~.barra::before {
 
 }
 
-
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: brown;
+    padding-top: 20px;
+}
 
 
 
@@ -874,3 +904,5 @@ textarea:focus~.barra::before {
         width   : 300px;
     }
 }
+
+

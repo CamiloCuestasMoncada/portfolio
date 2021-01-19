@@ -31,7 +31,11 @@
                 <li><a href="#contacto" class="nav__items">Contacto</a></li>
             </ul>
         </nav>
-
+        <div class="mensajeEnvioFormulario">
+            <img src="./img/hand.svg" alt="Emoticon de mano en v" class="hand">
+            <p class="exitoso">El formulario se envió exitosamente, ¡Muchas gracias!</p>
+            <a class="cerrarAviso">X</a>
+        </div>
         <div class="hero__partes">
             <div class="hero__foto__imgcontainer-perfil">
                 <img src="./img/Me.jpg" alt="foto de perfil de camilo cuestas moncada" class="hero__foto__img-perfil">
@@ -43,6 +47,7 @@
             </div>
 
         </div>
+        
 
         <div class="hero__animaciones">
             <div class="hero__animaciones-container">
@@ -57,7 +62,7 @@
             </div>
 
         </div>
-
+       
 
 
 
@@ -197,21 +202,22 @@
                     </div>
 
                     <div class="grupo">
-                        <input type="text" class="nombre" required>
+                        <input type="text" class="nombre" >
                         <label for="" class="nombre">Nombre:</label>
                         <span class="barra"></span>
                     </div>
                     <div class="grupo">
-                        <input type="email" class="mail" required>
+                        <input type="email" class="mail" >
                         <label for="" class="mail">E-mail:</label>
                         <span class="barra"></span>
                     </div>
                     <div class="grupo">
-                        <textarea rows="5" class="mensaje" required></textarea>
+                        <textarea rows="5" class="mensaje" ></textarea>
                         <label for="" class="mensaje">Mensaje:</label>
                         <span class="barra"></span>
                     </div>
-                    <button type="submit" class="boton">Enviar</button>
+                    <button type="submit" class="boton">Enviar<a src="#home" class="subir"></a></button>
+                    <p class="warnings" id="warnings"></p>
 
                 </div>
 
@@ -259,6 +265,10 @@
 
 
 </body>
+
+<script src="./js/validaForm.js"></script>
 <script src="./js/index.js"></script>
+<script src="./js/unitTesting.js"></script>
 
 </html>
+
