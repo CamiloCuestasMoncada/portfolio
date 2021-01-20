@@ -567,6 +567,9 @@ textarea:focus~.barra::before {
     display        : flex;
     justify-content: center;
     align-items    : center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
 }
 
 .footer__autor{
@@ -589,12 +592,15 @@ textarea:focus~.barra::before {
         margin-top   : 0;
         margin-bottom: 72px;
     }
+    
 }
 
 @media (max-width:1400px) {
     .form {
         width: 500px;
     }
+
+    
 
     html {
         font-size: 12px;
@@ -606,8 +612,8 @@ textarea:focus~.barra::before {
     }
 
     .hero__subtitulo {
-        margin-top   : 5px;
-        margin-bottom: 66px;
+        margin-top: 17px;
+        margin-bottom: 42px;
     }
 
     .footer__autor{
@@ -652,7 +658,7 @@ textarea:focus~.barra::before {
     }
 
     .hero__subtitulo {
-        margin-bottom: 78px;
+        margin-bottom: 50px;
     }
 
     .hero__titulo {
@@ -706,12 +712,17 @@ textarea:focus~.barra::before {
 
 @media(max-width:539px) {
 
-
     .hero__subtitulo {
-        margin-bottom: 77px;
-        line-height  : 20px;
-        width        : 130px;
+        margin-bottom: 18px;
+        line-height: 30px;
+        width: 147px;
+        text-align: center;
+        /* left: 20px; */
+        margin-left: 20px;
     }
+
+
+    
 
     .hero__textos {
         width: 178px;
@@ -726,24 +737,22 @@ textarea:focus~.barra::before {
     }
 
     .hero__titulo {
-        line-height : 40px;
-        text-align  : center;
+        line-height: 40px;
+        text-align: center;
         margin-right: 1px;
-        width       : 220px;
+        width: 220px;
+        position: relative;
+        right: 14px;
     }
 
-    .hero__subtitulo {
-        margin-bottom: 53px;
-        line-height  : 30px;
-        width        : 229px;
-    }
+    
 
     .footer__autor span{
         width: 77%;;
     }
 
     .nav ul li a{
-        font-size: 14px;
+        font-size: 16px;
     }
 
 }
@@ -753,19 +762,61 @@ textarea:focus~.barra::before {
     .hero__titulo {
 
         text-align: center;
-        width     : 10px;
-        padding   : 0;
-        margin    : 0;
+        width: 190px;
+        margin: 0;
+        margin-bottom: 15px;
 
+    }
+
+    .nav ul li {
+        list-style: none;
+        margin-left: -20px;
     }
 
     .nav ul li a {
         text-decoration: none;
-        font-size      : 12px;
+        font-size      : 16px;
+    }
+    .hero__subtitulo {
+        margin-bottom: 58px;
+        line-height: 30px;
+        width: 147px;
+        text-align: center;
+        /* left: 20px; */
+        margin-left: 5px;
     }
 }
 
 @media (max-width:360px) {
+
+    .hero__subtitulo {
+        margin-bottom: 54px;
+        line-height: 30px;
+        width: 147px;
+        text-align: center;
+        /* left: 20px; */
+        margin-left: -17px;
+    }
+
+    .nav ul li {
+        list-style: none;
+        margin-left: 0px;
+    }
+    
+    .nav ul li a {
+        text-decoration: none;
+        font-size      : 16px;
+    }
+
+    .hero__titulo {
+
+        text-align: center;
+        width: 140px;
+        margin: 0;
+        margin-bottom: 15px;
+
+    }
+
     .form {
         width: 90vw;
     }
@@ -795,9 +846,56 @@ textarea:focus~.barra::before {
     .footer__autor span{
         width: 100%;;
     }
+
+    /*.footer__contact{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }*/
 }
 
+@media(max-width:330px){
+    .nav ul li a {
+        text-decoration: none;
+        font-size      : 12px;
+    }
+}
 
+@media(max-width:280px){
+    .hero__subtitulo {
+        
+
+
+        margin-bottom: 25px;
+        line-height: 30px;
+        width: 98px;
+        text-align: center;
+        margin-left: 0px;
+        font-size: 12px;
+    }
+    
+    .hero__titulo {
+
+        text-align: center;
+        width: 115px;
+        margin: 0;
+        margin-bottom: 9px;
+        font-size: 2rem;
+        line-height: 24px;
+        position: relative;
+        top: 0px;
+        left: -5px;
+
+    }
+
+    
+
+
+    .hero__foto__imgcontainer-perfil {
+        width: 154px;
+        margin-left: 20px;
+    }
+}
+/*______________________________________________*/
 @media(max-width:940px) {
     .hero__animaciones-llave {
         width   : 48px;
@@ -831,11 +929,7 @@ textarea:focus~.barra::before {
 
 
 @media(max-width:552px) {
-    .hero__subtitulo {
-        margin-bottom: 53px;
-        line-height  : 30px;
-        width        : 147px;
-    }
+    
 
     .hero__animaciones {
         padding-left: 0px;
@@ -871,6 +965,10 @@ textarea:focus~.barra::before {
 }
 
 @media(max-width:345px) {
+
+    
+    
+
     .hero__animaciones-bug {
         left: 190px;
         top : -310px;
@@ -902,6 +1000,9 @@ textarea:focus~.barra::before {
     body {
         overflow: hidden;
         width   : 300px;
+    }
+    .nav{
+        width: 100%;
     }
 }
 
