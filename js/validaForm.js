@@ -1,4 +1,20 @@
 
+ var firebaseConfig = {
+    apiKey: "AIzaSyAsb8vO1ItLNhVoqDcP8eqAziPG58U8ydw",
+    authDomain: "jcamilocm-portfolio.firebaseapp.com",
+    projectId: "jcamilocm-portfolio",
+    storageBucket: "jcamilocm-portfolio.appspot.com",
+    messagingSenderId: "272718260799",
+    appId: "1:272718260799:web:4954ccc7cdf1968303a68a",
+    measurementId: "G-WQD6EE7SF3"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+
+
+
 function validaNombre(nombre){
     let mensajeDeError = "¡Hola! "; 
     if(nombre.length===0){
@@ -37,60 +53,94 @@ function validarMensaje(mensaje){
 }
 
 
+
+
+
+
+
+
 const formulario = document.querySelector('[class=form]');
 
     
     
 
 
-formulario.addEventListener('submit',e=>{
-    //e.preventDefault();
-    document.querySelector('.warnings').innerHTML="";
-    document.querySelector('.nombre').style.backgroundColor='#FFFFFF';
-    document.querySelector('.mail').style.backgroundColor='#FFFFFF';
-    document.querySelector('.mensaje').style.backgroundColor='#FFFFFF';
-    const nombre = document.querySelector('.nombre').value;
-    const mail = document.querySelector('.mail').value;
-    const mensaje = document.querySelector('.mensaje').value;
-    const advertencia = document.querySelector('.warnings');
-    let dato1 = validaNombre(nombre);
-    let dato2 = validarEmail(mail);
-    let dato3 = validarMensaje(mensaje);
-    if(dato1){
-        document.querySelector('.warnings').innerHTML=dato1;
-        document.querySelector('.nombre').style.backgroundColor='#FF7B7B';
-        e.preventDefault();
-    }
-    
+formulario.addEventListener('submit',submitForm);
 
-    if(dato2){
-        document.querySelector('.warnings').innerHTML=dato2;
-        document.querySelector('.mail').style.backgroundColor='#FF7B7B';
-        e.preventDefault();
-    }
-    
 
-    if(dato3){
-        document.querySelector('.warnings').innerHTML=dato3;
-        document.querySelector('.mensaje').style.backgroundColor='#FF7B7B';
+
+    function submitForm(e){
         e.preventDefault();
-    }
-    
-    if(!dato1 && !dato2 && !dato3){
-        document.querySelector('.warnings').innerHTML="¡gracias!Se ha enviado exitosamente";
-        document.querySelector('.mensajeEnvioFormulario').style.display='flex';
-        e.preventDefault();
-        document.querySelector('.subir').src='#home';
+        document.querySelector('.warnings').innerHTML="";
+        document.querySelector('.nombre').style.backgroundColor='#FFFFFF';
+        document.querySelector('.mail').style.backgroundColor='#FFFFFF';
+        document.querySelector('.mensaje').style.backgroundColor='#FFFFFF';
+        const nombre = document.querySelector('.nombre').value;
+        const mail = document.querySelector('.mail').value;
+        const mensaje = document.querySelector('.mensaje').value;
+        const advertencia = document.querySelector('.warnings');
+        let dato1 = validaNombre(nombre);
+        let dato2 = validarEmail(mail);
+        let dato3 = validarMensaje(mensaje);
+        if(dato1){
+            document.querySelector('.warnings').innerHTML=dato1;
+            document.querySelector('.nombre').style.backgroundColor='#FF7B7B';
+            e.preventDefault();
+        }
+        
+
+        if(dato2){
+            document.querySelector('.warnings').innerHTML=dato2;
+            document.querySelector('.mail').style.backgroundColor='#FF7B7B';
+            e.preventDefault();
+        }
+        
+
+        if(dato3){
+            document.querySelector('.warnings').innerHTML=dato3;
+            document.querySelector('.mensaje').style.backgroundColor='#FF7B7B';
+            e.preventDefault();
+        }
+        
+        if(!dato1 && !dato2 && !dato3){
+            //e.preventDefault();
+            /*document.querySelector('.warnings').innerHTML="¡gracias!Se ha enviado exitosamente";
+            document.querySelector('.mensajeEnvioFormulario').style.display='flex';
+            //e.preventDefault();
+            document.querySelector('.subir').src='#home';*/
+            const data = {
+                'name': nombre,
+                'email': mail,
+                'mensaje': mensaje
+              };
+            
+            guardaInfoContacto(data);
+            formulario.reset();
+            console.log('escucha')
        
-    }
+        }
 
+
+    }
+    
+   let guardaInfoContacto = (data)=>{
+
+    firebase.database().ref('contact').push(data) // Hacemos referencia al método database de el SDK y hacemos referencia el nombre del objeto que contendrá nuestros registros y empujamos los nuevos envios de datos
+    .then(function(){
+      document.querySelector('.mensajeEnvioFormulario').style.display='flex';
+      //alert('mensaje guardado'); // Si la petición es correcta y almaceno los datos mostramos un mensaje al usuario.
+    })
+    .catch(function(){
+      alert('mensaje No guardado'); // En caso de ocurrir un error le mostramos al usuario que ocurrió un error.
+    });
+
+   }
     
 
-  
-    console.log('escuchando');
-    }
-    )
-    
+
+
+
+
     const BtnCerrarAviso = document.querySelector('.cerrarAviso');
 
     BtnCerrarAviso.onclick=function(){
