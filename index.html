@@ -23,7 +23,7 @@
                     <img id="inicio" src="./img/inicio.png" alt="icono Inicio" height="30" width="30" />
                 </a>
             </div>
-            
+
 
             <ul>
                 <li><a href="#portafolio" class="nav__items">Portafolio</a></li>
@@ -31,7 +31,7 @@
                 <li><a href="#contacto" class="nav__items">Contacto</a></li>
             </ul>
         </nav>
-        
+
         <div class="hero__partes">
             <div class="hero__foto__imgcontainer-perfil">
                 <img src="./img/Me.jpg" alt="foto de perfil de camilo cuestas moncada" class="hero__foto__img-perfil">
@@ -43,7 +43,7 @@
             </div>
 
         </div>
-        
+
 
         <div class="hero__animaciones">
             <div class="hero__animaciones-container">
@@ -58,7 +58,7 @@
             </div>
 
         </div>
-       
+
 
 
 
@@ -70,34 +70,69 @@
             <div class="proyectos__content">
 
                 <article class="proyectos__item">
-                    <img src="./img/proyecto1.jpg" alt="portada sitio web para gestionar tareas del hogar" class="proyectos__img">
-                    <div class="proyectos__hover">
-                        <h2 class="proyectos__titulo">Gestion de las tareas del hogar</h2>
-                    </div>
+                    <img src="./img/proyecto1.jpg" alt="portada sitio web para gestionar tareas del hogar"
+                        class="proyectos__img">
+                    <a href="https://gestion-tareas-del-hogar.web.app" target="_blank">
+                        <div class="proyectos__hover" id="proyecto1">
+                            <span class="btn__info">+ info</span>
+                            <h2 class="proyectos__titulo">Gestión de las tareas del hogar</h2>
+                            <div class="containerIcons">
+                                <img src="./img/logo-js.svg" alt="logo de javascript" style="width: 50px">
+                                <img src="./img/logo_Bootstrap.svg" alt="logo de bootstrap" style="width: 50px;">
+                                <img src="./img/logo_Gsap.svg" alt="logo de G Sap" style="width: 50px;">
+                            </div>
+
+                        </div>
+                    </a>
                 </article>
 
                 <article class="proyectos__item">
-                    <img src="./img/proyecto2.jpg" alt="portada de una aplicación web que muestra información del clima"
+                    <img src="./img/proyecto5.jpg" alt="portada de una aplicación web que muestra información del clima"
                         class="proyectos__img">
-                    <div class="proyectos__hover">
-                        <h2 class="proyectos__titulo">Aplicación web del clima</h2>
+                    <div class="proyectos__hover" id="proyecto2">
+                        <span class="btn__info">+ info</span>
+                        <div class="container__titulo">
+                            <h2 class="proyectos__titulo">Aplicación web para compartir citas de libros.</h2>
+                        </div>
+                        <div class="containerIcons">
+                            <img src="./img/logo_Css.svg" alt="logo de css" style="width: 50px;">
+                            <img src="./img/logo_reactJs.svg" alt="logo de react js" style="width: 50px">
+                            <img src="./img/react-router-redux.png" alt="logo de bootstrap" class="router">
+                        </div>
+
+
                     </div>
                 </article>
 
                 <article class="proyectos__item">
                     <img src="./img/proyecto3.jpg" alt="portada sitio web de la empresa: Integrales Quiroga"
                         class="proyectos__img">
-                    <div class="proyectos__hover">
+                    <div class="proyectos__hover" id="proyecto3">
+                        <span class="btn__info">+ info</span>
                         <h2 class="proyectos__titulo">Integrales Quiroga</h2>
+                        <div class="containerIcons">
+                            <img src="./img/logo-js.svg" alt="logo de javascript" style="width: 50px">
+                            <img src="./img/logo_Css.svg" alt="logo de css" style="width: 50px;">
+                        </div>
+
                     </div>
                 </article>
 
                 <article class="proyectos__item">
-                    <img src="./img/proyecto4.jpg" alt="portada sitio web de la empresa: Baugroup Colombia"
+                    <img src="./img/proyecto2.jpg" alt="portada sitio web de la empresa: Baugroup Colombia"
                         class="proyectos__img">
-                    <div class="proyectos__hover">
-                        <h2 class="proyectos__titulo">Baugroup Colombia</h2>
-                    </div>
+
+                    <a href="https://github.com/CamiloCuestasMoncada/weatherApp" target="_blank">
+                        <div class="proyectos__hover">
+                            <span class="btn__info">+ info</span>
+                            <h2 class="proyectos__titulo">Aplicación web del clima</h2>
+                            <div class="containerIcons">
+                                <img src="./img/logo_Css.svg" alt="logo de css" style="width: 50px;">
+                                <img src="./img/logo_reactJs.svg" alt="logo de react js" style="width: 50px">
+                            </div>
+
+                        </div>
+                    </a>
                 </article>
 
 
@@ -106,6 +141,29 @@
 
 
 
+
+        </div>
+        <div class="video_ligth">
+            <img src="./img/close.svg" alt="Icono cerrar" class="close">
+            <div class="container_video">
+                <video src="./video/videoAppCitasDeLibros.mp4" id="books" controls></video>
+                <div class="linkRepo">
+                    <a href="https://github.com/CamiloCuestasMoncada/citasdeLibrosApp" target="_blank">
+                        <span>Link al repositorio del proyecto.</span>
+                        <img src="./img/Octocat.png" alt="icono de github" class="octo">
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="video_Quiroga_ligth">
+            <img src="./img/close.svg" alt="Icono cerrar" class="closeP3">
+            <div class="container_video">
+                <video src="./video/videoIntegralesQuiroga.mp4" id="proyecto3Video" controls></video>
+
+            </div>
 
         </div>
 
@@ -157,7 +215,7 @@
         </div>
         <div class="linea"></div>
         <div class="skill__content-subtitle">
-            <span class="skill__subtitle">Próximamente:</span>
+            <span class="skill__subtitle">Intereses:</span>
         </div>
 
         <div class="skill__container-extra">
@@ -203,17 +261,17 @@
                     </div>
 
                     <div class="grupo">
-                        <input type="text" class="nombre" >
+                        <input type="text" class="nombre">
                         <label for="" class="nombre">Nombre:</label>
                         <span class="barra"></span>
                     </div>
                     <div class="grupo">
-                        <input type="email" class="mail" >
+                        <input type="email" class="mail">
                         <label for="" class="mail">E-mail:</label>
                         <span class="barra"></span>
                     </div>
                     <div class="grupo">
-                        <textarea rows="5" class="mensaje" ></textarea>
+                        <textarea rows="5" class="mensaje"></textarea>
                         <label for="" class="mensaje">Mensaje:</label>
                         <span class="barra"></span>
                     </div>
@@ -234,16 +292,25 @@
 
 
                 <span class="footer__container-icons">
-                <a class="nav__items nav__items--footer" href="https://github.com/CamiloCuestasMoncada" target="_blank">
-                    <img id="inicio" src="./img/git-hub.svg" alt="logo de git-hub" height="96" width="106" />
-                </a>
+                    <a class="nav__items nav__items--footer" href="https://github.com/CamiloCuestasMoncada"
+                        target="_blank">
+                        <img id="inicio" src="./img/git-hub.svg" alt="logo de git-hub" class="social__footer1" />
+                    </a>
 
                 </span>
 
                 <span class="footer__container-icons">
                     <a class="nav__items nav__items--footer"
                         href="https://www.linkedin.com/in/jos%C3%A9-camilo-cuestas-moncada-06705a1b6/" target="_blank">
-                        <img id="inicio" src="./img/linkedin.svg" alt="logo de linkedin" height="90" width="100" />
+                        <img id="inicio" src="./img/linkedin.svg" alt="logo de linkedin" class="social__footer2" />
+                    </a>
+
+                </span>
+
+                <span class="footer__container-icons">
+                    <a class="nav__items nav__items--footer" href="./files/cuestasMoncadaCv.pdf" target="_blank"
+                        download="CuestasMoncadaCv">
+                        <img id="inicio" src="./img/cv.png" alt="logo de linkedin" class="social__footer3" />
                     </a>
 
                 </span>
@@ -263,32 +330,35 @@
 
     </div>
 
- 
 
 
 
-</body>
 
 
-       <!-- The core Firebase JS SDK is always required and must be listed first -->
-       <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
-       <!---<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script> -->
 
-       <!-- TODO: Add SDKs for Firebase products that you want to use
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
+    <!---<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script> -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
            https://firebase.google.com/docs/web/setup#available-libraries -->
-       <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
-   
-       <script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+
+    <script>
        // Your web app's Firebase configuration
        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      
-       </script>
+
+    </script>
 
 
 
-<script src="./js/validaForm.js"></script>
-<script src="./js/index.js"></script>
-<script src="./js/unitTesting.js"></script>
+    <script src="./js/validaForm.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/unitTesting.js"></script>
+    <script src="./js/ligthBoxVideos.js"></script>
+
+</body>
 
 </html>
 

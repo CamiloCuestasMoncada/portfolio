@@ -1,5 +1,5 @@
 
- var firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyAsb8vO1ItLNhVoqDcP8eqAziPG58U8ydw",
     authDomain: "jcamilocm-portfolio.firebaseapp.com",
     projectId: "jcamilocm-portfolio",
@@ -8,48 +8,48 @@
     appId: "1:272718260799:web:4954ccc7cdf1968303a68a",
     measurementId: "G-WQD6EE7SF3"
 };
-// Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 
 
 
-function validaNombre(nombre){
-    let mensajeDeError = "¡Hola! "; 
-    if(nombre.length===0){
-        return mensajeDeError+='Este campo debe tener almenos un caracter.'
-    }else if(nombre.length>30){
-        return mensajeDeError+='Este campo acepta un máximo de 30 caracteres'
+function validaNombre(nombre) {
+    let mensajeDeError = "¡Hola! ";
+    if (nombre.length === 0) {
+        return mensajeDeError += 'Este campo debe tener almenos un caracter.'
+    } else if (nombre.length > 30) {
+        return mensajeDeError += 'Este campo acepta un máximo de 30 caracteres'
     }
     return false;
-    
+
 
 }
 
-function validarEmail(mail){
-    let mensajeDeError = "¡Hola! "; 
+function validarEmail(mail) {
+    let mensajeDeError = "¡Hola! ";
     const RegExpMail = /.@./;
-    if(mail.length===0){
-        return  mensajeDeError+='Este campo no puede estar vacio';
+    if (mail.length === 0) {
+        return mensajeDeError += 'Este campo no puede estar vacio';
     }
-    if(!RegExpMail.test(mail)){
-        return mensajeDeError+='Por favor ingrese un mail valido';
-    } 
+    if (!RegExpMail.test(mail)) {
+        return mensajeDeError += 'Por favor ingrese un mail valido';
+    }
     return false;
-  
-    
+
+
 }
 
-function validarMensaje(mensaje){
-    let mensajeDeError = "¡Hola! "; 
-    if(mensaje.length===0){
-        return mensajeDeError+='Este campo debe tener almenos un caracter.'
-    }else if(mensaje.length>500){
-        return mensajeDeError+='Este campo acepta un máximo de 300 caracteres'
+function validarMensaje(mensaje) {
+    let mensajeDeError = "¡Hola! ";
+    if (mensaje.length === 0) {
+        return mensajeDeError += 'Este campo debe tener almenos un caracter.'
+    } else if (mensaje.length > 500) {
+        return mensajeDeError += 'Este campo acepta un máximo de 300 caracteres'
     }
     return false;
-    
+
 }
 
 
@@ -61,92 +61,88 @@ function validarMensaje(mensaje){
 
 const formulario = document.querySelector('[class=form]');
 
-    
-    
-
-
-formulario.addEventListener('submit',submitForm);
 
 
 
-    function submitForm(e){
+
+formulario.addEventListener('submit', submitForm);
+
+
+
+function submitForm(e) {
+    e.preventDefault();
+    document.querySelector('.warnings').innerHTML = "";
+    document.querySelector('.nombre').style.backgroundColor = '#FFFFFF';
+    document.querySelector('.mail').style.backgroundColor = '#FFFFFF';
+    document.querySelector('.mensaje').style.backgroundColor = '#FFFFFF';
+    const nombre = document.querySelector('.nombre').value;
+    const mail = document.querySelector('.mail').value;
+    const mensaje = document.querySelector('.mensaje').value;
+    const advertencia = document.querySelector('.warnings');
+    let dato1 = validaNombre(nombre);
+    let dato2 = validarEmail(mail);
+    let dato3 = validarMensaje(mensaje);
+    if (dato1) {
+        document.querySelector('.warnings').innerHTML = dato1;
+        document.querySelector('.nombre').style.backgroundColor = '#FF7B7B';
         e.preventDefault();
-        document.querySelector('.warnings').innerHTML="";
-        document.querySelector('.nombre').style.backgroundColor='#FFFFFF';
-        document.querySelector('.mail').style.backgroundColor='#FFFFFF';
-        document.querySelector('.mensaje').style.backgroundColor='#FFFFFF';
-        const nombre = document.querySelector('.nombre').value;
-        const mail = document.querySelector('.mail').value;
-        const mensaje = document.querySelector('.mensaje').value;
-        const advertencia = document.querySelector('.warnings');
-        let dato1 = validaNombre(nombre);
-        let dato2 = validarEmail(mail);
-        let dato3 = validarMensaje(mensaje);
-        if(dato1){
-            document.querySelector('.warnings').innerHTML=dato1;
-            document.querySelector('.nombre').style.backgroundColor='#FF7B7B';
-            e.preventDefault();
-        }
-        
+    }
 
-        if(dato2){
-            document.querySelector('.warnings').innerHTML=dato2;
-            document.querySelector('.mail').style.backgroundColor='#FF7B7B';
-            e.preventDefault();
-        }
-        
 
-        if(dato3){
-            document.querySelector('.warnings').innerHTML=dato3;
-            document.querySelector('.mensaje').style.backgroundColor='#FF7B7B';
-            e.preventDefault();
-        }
+    if (dato2) {
+        document.querySelector('.warnings').innerHTML = dato2;
+        document.querySelector('.mail').style.backgroundColor = '#FF7B7B';
+        e.preventDefault();
+    }
+
+
+    if (dato3) {
+        document.querySelector('.warnings').innerHTML = dato3;
+        document.querySelector('.mensaje').style.backgroundColor = '#FF7B7B';
+        e.preventDefault();
+    }
+
+    if (!dato1 && !dato2 && !dato3) {
         
-        if(!dato1 && !dato2 && !dato3){
-            //e.preventDefault();
-            /*document.querySelector('.warnings').innerHTML="¡gracias!Se ha enviado exitosamente";
-            document.querySelector('.mensajeEnvioFormulario').style.display='flex';
-            //e.preventDefault();
-            document.querySelector('.subir').src='#home';*/
-            const data = {
-                'name': nombre,
-                'email': mail,
-                'mensaje': mensaje
-              };
+        const data = {
+            'name': nombre,
+            'email': mail,
+            'mensaje': mensaje
+        };
+
+        guardaInfoContacto(data);
+        formulario.reset();
+        console.log('escucha')
+
+    }
+
+
+}
+
+let guardaInfoContacto = (data) => {
+
+    firebase.database().ref('contact').push(data) 
+        .then(function () {
+            document.querySelector('.mensajeEnvioFormulario').style.display = 'flex';
             
-            guardaInfoContacto(data);
-            formulario.reset();
-            console.log('escucha')
-       
-        }
+        })
+        .catch(function () {
+            alert('mensaje No guardado'); 
+        });
 
-
-    }
-    
-   let guardaInfoContacto = (data)=>{
-
-    firebase.database().ref('contact').push(data) // Hacemos referencia al método database de el SDK y hacemos referencia el nombre del objeto que contendrá nuestros registros y empujamos los nuevos envios de datos
-    .then(function(){
-      document.querySelector('.mensajeEnvioFormulario').style.display='flex';
-      //alert('mensaje guardado'); // Si la petición es correcta y almaceno los datos mostramos un mensaje al usuario.
-    })
-    .catch(function(){
-      alert('mensaje No guardado'); // En caso de ocurrir un error le mostramos al usuario que ocurrió un error.
-    });
-
-   }
-    
+}
 
 
 
 
 
-    const BtnCerrarAviso = document.querySelector('.cerrarAviso');
 
-    BtnCerrarAviso.onclick=function(){
-        
-        document.querySelector('.mensajeEnvioFormulario').style.display='none';
-    }
+const BtnCerrarAviso = document.querySelector('.cerrarAviso');
+
+BtnCerrarAviso.onclick = function () {
+
+    document.querySelector('.mensajeEnvioFormulario').style.display = 'none';
+}
 
 
 
